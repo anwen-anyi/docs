@@ -17,7 +17,7 @@ sticky: true
 star: true
 ---
 
-# PikPak / share
+# PikPak / Share
 
 ::: danger
 
