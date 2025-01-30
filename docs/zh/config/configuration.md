@@ -78,6 +78,7 @@ star: true
   },
   "delayed_start": 0,
   "max_connections": 0,
+  "max_concurrency": 64,
   "tls_insecure_skip_verify": true,
   "tasks": {
     "download": {
@@ -99,7 +100,18 @@ star: true
       "workers": 5,
       "max_retry": 2,
       "task_persistant": false
-    }
+    },
+    "decompress": {
+      "workers": 5,
+      "max_retry": 2,
+      "task_persistant": false
+    },
+    "decompress_upload": {
+      "workers": 5,
+      "max_retry": 2,
+      "task_persistant": false
+    },
+    "allow_retry_canceled": false
   },
   "cors": {
     "allow_origins": [
@@ -132,7 +144,8 @@ star: true
   "sftp": {
     "enable": false,
     "listen": ":5222"
-  }
+  },
+  "last_launched_version": "AList version"
 }
 ```
 
@@ -297,6 +310,8 @@ MySQL 5.x 和 8.x 也不一样。如果使用服务商提供的免费/收费数�
 
 文档链接：https://www.meilisearch.com/docs
 
+参考链接：https://github.com/AlistGo/alist/discussions/6830
+
 
 
 <br/>
@@ -405,6 +420,14 @@ temp_dir 为 alist 独占的临时文件夹，为避免程序中断产生垃圾�
 
 
 
+### **max_concurrency**
+
+限制本地代理的最大并发，默认为64，0为不限制
+
+<br/>
+
+
+
 ### **tls_insecure_skip_verify**
 
 是否不检查 SSL 证书，关闭后如使用的网站的证书出现问题（如未包含中级证书、证书过期、证书伪造等），将不能使用该服务，开启该选项请尽量在安全的网络环境下运行程序
@@ -438,7 +461,18 @@ temp_dir 为 alist 独占的临时文件夹，为避免程序中断产生垃圾�
       "workers": 5,
       "max_retry": 2,
       "task_persistant": false
-    }
+    },
+    "decompress": {
+      "workers": 5,
+      "max_retry": 2,
+      "task_persistant": false
+    },
+    "decompress_upload": {
+      "workers": 5,
+      "max_retry": 2,
+      "task_persistant": false
+    },
+    "allow_retry_canceled": false
   },
 ```
 
@@ -449,11 +483,16 @@ temp_dir 为 alist 独占的临时文件夹，为避免程序中断产生垃圾�
 - **transfer**：离线下载时上传中转的任务
 - **upload**：上传任务
 - **copy**：复制任务
+- **decompress**：解压
+- **decompress_upload**：解压上传
 - **task_persistant**：任务持久化，重启 `AList` 后任务不会取消
-  - **download**：true
-  - **transfer**：true
+  - **download**：false
+  - **transfer**：false
   - **upload**：false
-  - **copy**：true
+  - **copy**：false
+  - **decompress**：false
+  - **decompress_upload**：false
+- **allow_retry_canceled**：允许用户重试之前取消的任务
 
 
 <br/>
