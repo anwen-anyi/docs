@@ -83,12 +83,12 @@ star: true
     "download": {
       "workers": 5,
       "max_retry": 1,
-      "task_persistant": true
+      "task_persistant": false
     },
     "transfer": {
       "workers": 5,
       "max_retry": 2,
-      "task_persistant": true
+      "task_persistant": false
     },
     "upload": {
       "workers": 5,
@@ -98,7 +98,7 @@ star: true
     "copy": {
       "workers": 5,
       "max_retry": 2,
-      "task_persistant": true
+      "task_persistant": false
     }
   },
   "cors": {
@@ -116,6 +116,22 @@ star: true
     "enable": false,
     "port": 5246,
     "ssl": false
+  },
+  "ftp": {
+    "enable": false,
+    "listen": ":5221",
+    "find_pasv_port_attempts": 50,
+    "active_transfer_port_non_20": false,
+    "idle_timeout": 900,
+    "connection_timeout": 30,
+    "disable_active_mode": false,
+    "default_transfer_binary": false,
+    "enable_active_conn_ip_check": true,
+    "enable_pasv_conn_ip_check": true
+  },
+  "sftp": {
+    "enable": false,
+    "listen": ":5222"
   }
 }
 ```
@@ -406,12 +422,12 @@ temp_dir 为 alist 独占的临时文件夹，为避免程序中断产生垃圾�
     "download": {
       "workers": 5,
       "max_retry": 1,
-      "task_persistant": true
+      "task_persistant": false
     },
     "transfer": {
       "workers": 5,
       "max_retry": 2,
-      "task_persistant": true
+      "task_persistant": false
     },
     "upload": {
       "workers": 5,
@@ -421,7 +437,7 @@ temp_dir 为 alist 独占的临时文件夹，为避免程序中断产生垃圾�
     "copy": {
       "workers": 5,
       "max_retry": 2,
-      "task_persistant": true
+      "task_persistant": false
     }
   },
 ```
@@ -487,3 +503,55 @@ temp_dir 为 alist 独占的临时文件夹，为避免程序中断产生垃圾�
 - `SSL`：启用HTTPS证书，默认未启用
 
 功能介绍：[点击查看](../guide/advanced/s3.md)
+
+<br/>
+
+
+
+### **ftp** <Badge text="v3.41.0" type="info" vertical="middle" />
+
+````json
+  "ftp": {
+    "enable": false,
+    "listen": ":5221",
+    "find_pasv_port_attempts": 50,
+    "active_transfer_port_non_20": false,
+    "idle_timeout": 900,
+    "connection_timeout": 30,
+    "disable_active_mode": false,
+    "default_transfer_binary": false,
+    "enable_active_conn_ip_check": true,
+    "enable_pasv_conn_ip_check": true
+  },
+````
+
+- `enable`：**ftp** 功能是否启用，默认未启用
+- `listen`：端口号
+- `find_pasv_port_attempts`：被动传输时因端口冲突而重新寻找端口的最大尝试次数
+- `active_transfer_port_non_20`：启用20以外的端口作为主动传输端口
+- `idle_timeout`：客户端无请求情况下的最长待机时间（秒）
+- `connection_timeout`：连接超时时间
+- `disable_active_mode`：禁用主动传输模式
+- `default_transfer_binary`：默认以二进制模式传输
+- `enable_active_conn_ip_check`：主动传输模式下对数据流TCP连接的客户端进行IP检查
+- `enable_pasv_conn_ip_check`：被动传输模式下对数据流TCP连接的客户端进行IP检查
+
+其它说明：[点击查看](../guide/advanced/ftp.md)
+
+<br/>
+
+
+
+### **sftp** <Badge text="v3.41.0" type="info" vertical="middle" />
+
+```json
+  "sftp": {
+    "enable": false,
+    "listen": ":5222"
+  }
+```
+
+- `enable`：**sftp** 功能是否启用，默认未启用
+- `listen`：端口号
+
+其它说明：[点击查看](../guide/advanced/ftp.md)
