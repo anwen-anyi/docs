@@ -55,6 +55,10 @@ export default hopeTheme(
       },
     },
     markdown: {
+      imgMark: true,      //支持图片标记
+      imgLazyload: true,  //支持图片懒加载
+      // figure: true,       //支持图片描述
+      imgSize: true,      //支持图片大小
       tabs: true,         //支持表格
       gfm: true,          //支持完整的 GFM 语法
       tasklist: true,     //支持任务列表

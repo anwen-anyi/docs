@@ -1,4 +1,4 @@
-// .@vuepress/client.ts
+// .vuepress/client.ts
 import { defineClientConfig } from "@vuepress/client";
 import NaiveClient from "./components/NaiveClient.vue";
 
