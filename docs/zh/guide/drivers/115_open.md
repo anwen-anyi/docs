@@ -22,7 +22,7 @@ headerDepth: 5
 
 ::: tip
 
-使用  [**115开放平台**](https://open.115.com/) 开发
+使用  [**115开放平台**](https://open.115.com/) 开发、请规范使用帐号、非法使用帐号被封禁后果自负。
 
 :::
 
@@ -60,6 +60,17 @@ failed get objs: failed to list objs: error: refresh token error, errno: 0
 ```html
 Failed init storage but storage is already created: failed init storage: error: refresh frequently, errno: 0
 ```
+
+
+
+<br/>
+
+### **使用其他 APP ID 获取刷新令牌**
+
+例如使用自己申请的开发者应用ID获取刷新令牌，在获取刷新令牌前先填写应用`APP ID`再点击获取刷新令牌按钮
+
+![](/img/drivers/115/115_b_t.png#light)
+![](/img/drivers/115/115_h_t.png#dark)
 
 
 

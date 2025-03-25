@@ -22,7 +22,7 @@ headerDepth: 5
 
 ::: tip
 
-Developed using [**115 Open Platform**](https://open.115.com/)
+Developed using [**115 Open Platform**](https://open.115.com/)、Please use your account in a standardized manner. If you use your account illegally, you will be responsible for the consequences if it is blocked.
 
 :::
 
@@ -62,6 +62,17 @@ Failed init storage but storage is already created: failed init storage: error: 
 <br/>
 
 
+
+### **Get a refresh token using another APP ID**
+
+For example, use your own developer application ID to obtain a refresh token. Before obtaining a refresh token, fill in the application`APP ID` and then click the Get Refresh Token button.
+
+![](/img/drivers/115/115_b_t.png#light)
+![](/img/drivers/115/115_h_t.png#dark)
+
+
+
+<br/>
 
 ## **Root folder ID**
 
