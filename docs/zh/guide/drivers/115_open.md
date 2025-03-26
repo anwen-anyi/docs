@@ -47,19 +47,23 @@ headerDepth: 5
 
 ::: warning Token 泄漏后处理方法
 
-如果不小心泄漏了 Token，可以马上重新获取一个新的刷新令牌，之前的就会失效，失效后会提示如下内容：
+如果不小心泄漏了 Token，可以前往115设备登录管理解除应用授权
 
-```html
-failed get objs: failed to list objs: error: refresh token error, errno: 0
+- 115 APP：【**iOS** 、**Android**】版本 需要 ≥ 35.11.0
+- 115 网页端：**https://115.com/?mode=device_manage**
+
+失效后会提示如下内容：
+
+```json
+failed get objs: failed to list objs: code: 40140116, message: no auth
 ```
+
+一个帐号可以在同一个应用获取两次`Refresh token`，第三次获取后第一次获取到的`Refresh token`就会失效，使用第一个`Refresh token`会提示上面的错误
+
+![](/img/drivers/115/115_auth_b.png#light)
+![](/img/drivers/115/115_auth_h.png#dark)
 
 :::
-
-新获取的刷新令牌无法直接在原驱动內进行更换刷新令牌，api接口有限流，短时间内不能连续刷新，只能删掉原驱动重新添加（如果还提示则等待1分钟再尝试，使用新的 `refresh token`）
-
-```html
-Failed init storage but storage is already created: failed init storage: error: refresh frequently, errno: 0
-```
 
 
 
