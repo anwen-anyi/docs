@@ -5,7 +5,7 @@ import { ref } from 'vue'
 
 const showContactModal = ref(false)
 
-const qrCode = ref('https://oss.hutool.cn/000000-hutool/upload/alist/qi%20ye.jpg')
+const qrCode = ref('https://oss.hutool.cn/hutool/kefu/WechatIMG659.jpg?Content-Disposition=attachment%3B%20filename%3D%22kefu%2FWechatIMG659.jpg%22&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=admin%2F20250521%2F%2Fs3%2Faws4_request&X-Amz-Date=20250521T033551Z&X-Amz-Expires=432000&X-Amz-SignedHeaders=host&X-Amz-Signature=80705eb9d83b08197efb61cfe90cb7446e93f195291d3f226d00fbe55592d4fa')
 
 let data = {
   pricing: [
@@ -105,7 +105,7 @@ if (location.pathname.startsWith("/zh/")) {
       },
       {
         title: 'AList桌面版',
-        price: '￥39.99',
+        price: '￥50',
         features: [
           '所有开源功能',
           '使用好看的UI管理AList程序而不是命令行，方便的查看日志',
