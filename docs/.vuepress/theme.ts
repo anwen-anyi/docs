@@ -7,7 +7,7 @@ export default hopeTheme(
     docsDir: "docs",
     logo: "/logo.svg",
     repo: "anwen-anyi/docs",
-    hostname: "https://anwen-anyi.github.io/wlist",
+    hostname: "https://anwen-anyi.github.io/docs",
     // 移动到 palette.scss 文件中
     // themeColor: {
     //   blue: "#2196f3",
