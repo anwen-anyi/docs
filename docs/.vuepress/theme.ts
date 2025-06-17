@@ -6,8 +6,8 @@ export default hopeTheme(
   {
     docsDir: "docs",
     logo: "/logo.svg",
-    repo: "alist-org/docs",
-    hostname: "https://alist.nn.ci",
+    repo: "anwen-anyi/docs",
+    hostname: "https://anwen-anyi.github.io/wlist",
     // 移动到 palette.scss 文件中
     // themeColor: {
     //   blue: "#2196f3",
@@ -17,8 +17,8 @@ export default hopeTheme(
     // },
 
     author: {
-      name: "Andy Hsu",
-      url: "https://i.nn.ci",
+      name: "anwen",
+      url: "https://github.com/anwen-anyi",
     },
 
     pageInfo: ["Author", "Original", "Date", "Category", "Tag", "ReadingTime"],
@@ -111,10 +111,10 @@ export default hopeTheme(
          * Using Giscus 评论
          */
         provider: "Giscus",
-        repo: "AlistGo/docs",
-        repoId: "R_kgDOHmaM-A",
+        repo: "anwen-anyi/docs",
+        repoId: "R_kgDOJvzhuQ-A",
         category: "Announcements",
-        categoryId: "DIC_kwDOHmaM-M4CRRXl",
+        categoryId: "DIC_kwDOJvzhuc4CrmJl",
 
       },
       // 临时弹窗
