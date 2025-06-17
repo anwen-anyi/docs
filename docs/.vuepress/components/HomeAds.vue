@@ -30,6 +30,7 @@ const vidHubCN = {
   new_site: "打开新站点",
 }
 
+// 跳转新站点
 const vidHub = computed(() => {
   if (isZh.value) return vidHubCN
   return vidHubEn
